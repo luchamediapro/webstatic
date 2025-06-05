@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="referrer" content="never" />
+<meta name="referrer" content="no-referrer" />
+<title>LuchaMedia</title>
+<style>
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing:
+        border-box;
+    }
+
+    body {
+      background: #111;
+      color: #777;
+      font-size: 16px;
+      font-family: arial;
+      display: block;
+      width: 100%;
+      height: 100vh;
+      display:
+        flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items:
+        center;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    #plyr {
+      position: relative;
+      z-index: 2;
+    }
+
+    #plyr iframe {
+      background: #000;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    iframe {
+      border: 0;
+    }
+
+    video {
+      width: 100%;
+    }
+
+    #loader {
+      width: 175px;
+      height: 80px;
+      display: block;
+      background-image:
+        radial-gradient(circle 25px at 25px 25px, #FFF 100%, transparent 0),
+        radial-gradient(circle 50px at 50px 50px, #FFF 100%, transparent 0),
+        radial-gradient(circle 25px at 25px 25px, #FFF 100%, transparent 0),
+        linear-gradient(#FFF 50px, transparent 0);
+      background-size: 50px 50px,
+        100px 76px, 50px 50px, 120px 40px;
+      background-position: 0px 30px, 37px 0px, 122px 30px, 25px 40px;
+      background-repeat: no-repeat;
+      position:
+        relative;
+      box-sizing: border-box;
+      margin-top: -100px;
+    }
+
+    #loader::after {
+      content: '';
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: 20px;
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 5px solid transparent;
+      border-color: rgb(207, 17, 128) transparent;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    #message {
+      margin-top: 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-reload {
+      border: 0;
+      padding: 8px 20px;
+      border-radius: 6px;
+      background: rgb(71, 216, 71);
+      margin-top: 100px;
+      cursor: pointer;
+    }
+
+    .jw-state-idle .jw-preview {
+      background: url(https://i.imgur.com/hP2WeXw.png);
+      background-size: cover;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .wall {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+<script>
+    window.x_x = 'p1.php';
+    window.x_x_s = true;
+    window.ref = 'luchalibre';
+
+  </script>
+</head>
+<body>
+<div id="loader"></div>
+<div id="plyr"></div>
+<div class="wall">
+<div id="message">Luchamedia..Loading...</div>
+</div>
+<script src="/raq/player.js"></script>
+</body>
+</html>
