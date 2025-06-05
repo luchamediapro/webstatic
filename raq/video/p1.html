@@ -1,0 +1,19 @@
+{"file":"<?php
+// URL del embed
+$embed_url = 'https://www.tokyvideo.com/es/embed/737018';
+
+// Obtener el contenido del embed
+$embed_content = file_get_contents($embed_url);
+
+// Buscar la URL del video MP4 en el contenido del embed
+$pattern = '/<source src="(.*?)" type="video\/mp4"/';
+preg_match($pattern, $embed_content, $matches);
+
+// Verificar si se encontró la URL del video
+if (isset($matches[1])) {
+$video_url = $matches[1];
+echo $video_url;
+} else {
+echo 'No se pudo encontrar la URL del video MP4';
+}
+?>"}
