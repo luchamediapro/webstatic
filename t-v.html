@@ -4,13 +4,13 @@
     <title>TECNOTV: Catálogo de Canales en Vivo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubre las mejores listas IPTV y m3u gratuitas para disfrutar de tus contenidos favoritos en Smart TV, Kodi, OTTPlayer y más.">
-    <meta name="keywords" content="iptv, m3u, listas iptv, kodi, ottplayer, smarttv, playlist, televisión online">
-    <meta name="author" content="TecnoTV">
+    <meta name="description" content="El mejor contenido a tu dispocision">
+    <meta name="keywords" content="El mejor contenido a tu dispocision">
+    <meta name="author" content="L-M">
     
 <!-- Meta Open Graph (OG) -->
-    <meta property="og:title" content="TECNOTV: Catálogo de Canales en Vivo">
-    <meta property="og:description" content="Descubre una amplia variedad de canales en vivo en TECNOTV. Entretenimiento, noticias, deportes y más, todo en un solo lugar.">
+    <meta property="og:title" content="El mejor contenido a tu dispocision">
+    <meta property="og:description" content="El mejor contenido a tu dispocision">
     <meta property="og:image" content="https://i.imgur.com/Is0EEo6.png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
@@ -18,17 +18,17 @@
 
     <!-- Meta para Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TECNOTV: Catálogo de Canales en Vivo">
-    <meta name="twitter:description" content="Explora una variedad de canales en vivo en TECNOTV. Desde entretenimiento hasta noticias, todo en un solo lugar.">
+    <meta name="twitter:title" content="LM Catálogo de Canales en Vivo">
+    <meta name="twitter:description" content="Explora una variedad de canales en vivo en LM. Desde entretenimiento hasta noticias, todo en un solo lugar.">
     <meta name="twitter:image" content="https://i.imgur.com/Is0EEo6.png">
     <meta name="twitter:site" content="@revista_spinoff">
 
     <!-- Meta descripción para SEO -->
-    <meta name="description" content="Accede al catálogo de canales en vivo de TECNOTV y disfruta de contenido variado: infantil, animación, cultura, entretenimiento, cine, series, música, deportes, noticias y religión.">
+    <meta name="description" content="Accede al catálogo de canales en vivo de LM y disfruta de contenido variado: infantil, animación, cultura, entretenimiento, cine, series, música, deportes, noticias y religión.">
     <meta name="keywords" content="canales en vivo, streaming, entretenimiento, noticias, deportes, música, cine, series, televisión en línea">
-    <meta name="author" content="TECNOTV">
+    <meta name="author" content="LM">
     
-    <link rel="icon" href="https://imgur.com/m7pUXDC.png" type="image/png">
+    <link rel="icon" href="https://png.pngtree.com/png-clipart/20230806/original/pngtree-tv-logo-design-concept-company-elegant-multimedia-vector-picture-image_9946314.png" type="image/png">
     <link rel="stylesheet" href="https://spinoff.link/live/styles.css?v=1.7">
         
         
@@ -45,7 +45,7 @@
     </script>
 </head>
 <body>
-    <div style="text-align:center;" id="94372-31"><script src="//ads.themoneytizer.com/s/gen.js?type=31"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=94372&formatId=31"></script></div>
+    <div style="text-align:center;" id="94372-31"><script src="https://fpyf8.com/88/tag.min.js" data-zone="150776" async data-cfasync="false"></script></div>
     <div class="header">
         <button onclick="showCategory('all')">Todo</button>
         <button onclick="showCategory('infantil')">Infantil</button>
@@ -378,48 +378,6 @@
     <div id="feed-container">Cargando noticias...</div>
 </div>
 
-<script>
-    // URL del feed RSS
-    const feedUrl = 'https://spinoff.link/feed'; // Reemplaza con tu URL RSS
-    const feedContainer = document.getElementById('feed-container');
-
-    // Función para extraer la primera imagen de un texto HTML
-    function extractImageFromDescription(description) {
-        const imgTag = description.match(/<img[^>]+src="([^">]+)"/);
-        return imgTag ? imgTag[1] : '';
-    }
-
-    // Cargar y mostrar el feed
-    async function loadRSS() {
-        try {
-            const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`);
-            const data = await response.json();
-
-            if (data.items) {
-                const newsHtml = data.items.map(item => {
-                    const imgSrc = item.enclosure?.link || extractImageFromDescription(item.description);
-                    return `
-                        <div style="margin-bottom: 15px; border-bottom: 1px solid #555; padding-bottom: 10px;">
-                            ${imgSrc ? `<img src="${imgSrc}" alt="${item.title}" style="max-width: 100%; height: auto; margin-bottom: 5px; border: 1px solid #555;">` : ''}
-                            <a href="${item.link}" target="_blank" style="font-size: 18px; font-weight: bold; text-decoration: none; color: #FFD700;">
-                                ${item.title}
-                            </a>
-                            <p style="margin: 5px 0; color: #ccc;">${item.description}</p>
-                        </div>
-                    `;
-                }).join('');
-                feedContainer.innerHTML = newsHtml;
-            } else {
-                feedContainer.innerHTML = '<p style="color: #ccc;">No se encontraron noticias.</p>';
-            }
-        } catch (error) {
-            console.error('Error al cargar el feed:', error);
-            feedContainer.innerHTML = '<p style="color: #f00;">Error al cargar las noticias.</p>';
-        }
-    }
-
-    loadRSS();
-</script>
 
 
 
@@ -594,7 +552,7 @@ document.oncontextmenu = function(){return false;}
 </script>
 <!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
 
-<div id="94372-6"><script src="//ads.themoneytizer.com/s/gen.js?type=6"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=94372&formatId=6"></script></div>
+   <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gizokraijaw.net',9380227,document.createElement('script'))</script></div>
 
    <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
@@ -611,8 +569,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
 
 
 	<div class="mensaje-fijo">
-        <a target="_blank" href="https://tecnotv.club">Disfruta de listas IPTV 
-		gratuitas presionando aquí</a></div>
+        <a target="_blank" href="https://luchamedia.es">Recuerda que en nuestro sitio web encontraras el mejor contenido sin coste</a></div>
 
 </body>
 </html>
