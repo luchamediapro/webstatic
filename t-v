@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>TECNOTV: Catálogo de Canales en Vivo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre las mejores listas IPTV y m3u gratuitas para disfrutar de tus contenidos favoritos en Smart TV, Kodi, OTTPlayer y más.">
+    <meta name="keywords" content="iptv, m3u, listas iptv, kodi, ottplayer, smarttv, playlist, televisión online">
+    <meta name="author" content="TecnoTV">
+    
+<!-- Meta Open Graph (OG) -->
+    <meta property="og:title" content="TECNOTV: Catálogo de Canales en Vivo">
+    <meta property="og:description" content="Descubre una amplia variedad de canales en vivo en TECNOTV. Entretenimiento, noticias, deportes y más, todo en un solo lugar.">
+    <meta property="og:image" content="https://i.imgur.com/Is0EEo6.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Meta para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TECNOTV: Catálogo de Canales en Vivo">
+    <meta name="twitter:description" content="Explora una variedad de canales en vivo en TECNOTV. Desde entretenimiento hasta noticias, todo en un solo lugar.">
+    <meta name="twitter:image" content="https://i.imgur.com/Is0EEo6.png">
+    <meta name="twitter:site" content="@revista_spinoff">
+
+    <!-- Meta descripción para SEO -->
+    <meta name="description" content="Accede al catálogo de canales en vivo de TECNOTV y disfruta de contenido variado: infantil, animación, cultura, entretenimiento, cine, series, música, deportes, noticias y religión.">
+    <meta name="keywords" content="canales en vivo, streaming, entretenimiento, noticias, deportes, música, cine, series, televisión en línea">
+    <meta name="author" content="TECNOTV">
+    
+    <link rel="icon" href="https://imgur.com/m7pUXDC.png" type="image/png">
+    <link rel="stylesheet" href="https://spinoff.link/live/styles.css?v=1.7">
+        
+        
+    </script>
+    
+        <script>
+        // Detectar la tecla F12 y evitar su funcionamiento
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F12') {
+                event.preventDefault();
+                alert("Las herramientas de desarrollo están desactivadas.");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div style="text-align:center;" id="94372-31"><script src="//ads.themoneytizer.com/s/gen.js?type=31"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=94372&formatId=31"></script></div>
+    <div class="header">
+        <button onclick="showCategory('all')">Todo</button>
+        <button onclick="showCategory('infantil')">Infantil</button>
+        <button onclick="showCategory('animacion')">Animación</button>
+        <button onclick="showCategory('cultura')">Cultura</button>
+        <button onclick="showCategory('entretenimiento')">Entretenimiento</button>
+        <button onclick="showCategory('cineseries')">Cine y Series</button>
+        <button onclick="showCategory('musica')">Música</button>
+        <button onclick="showCategory('deportes')">Deportes</button>
+        <button onclick="showCategory('noticias')">Noticias</button>
+        <button onclick="showCategory('religion')">Religion</button>
+        <!-- Agrega más botones de categorías aquí -->
+    
+    
+    </div>
+    
+<div class="channels">
+        <a href="https://spinoff.link/live/m3u8.php?url=https://telemundolive.akamaized.net/hls/live/2093200/LCDLFCAM11/master_main1.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/F2uzttZ.png" alt="LCDLF1">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://telemundolive.akamaized.net/hls/live/2093200/LCDLFCAM22/master_main1.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/F2uzttZ.png" alt="LCDLF2">
+        </div>
+    </a>
+    <a href="https://spinoff.link/live/mpd.php?url=https://live2-ott.izzigo.tv/out/u/dash/CANAL-5-HD/default.mpd&k=6e5ee266b112e58a0e27e4384b03ed76&id=578f77c2e0fb7b31b1676b75b57fe922" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/fenGIDo.png" alt="Canal5">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://dai.google.com/linear/hls/event/yINISWAPQ0CPhPixe-40wQ/master.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/mOAF6dE.png" alt="clarosport">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://pubads.g.doubleclick.net/ssai/event/YHoOj51dSKCvBQOBG2OvLQ/master.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/kHX2Lly.png" alt="azteca7">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://channel09-onlymex.akamaized.net/hls/live/2094418/event01/index.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel noticias">
+            <img src="https://imgur.com/nYevo9e.png" alt="N+">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://1601580044.rsc.cdn77.org/live/_jcn_/amlst:Mariavision/playlist.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel religion">
+            <img src="https://imgur.com/uLSRHL2.png" alt="Maria Vision">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/45br1zs.png" alt="Telemundo">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream2/master.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/mqfzWb9.png" alt="punto 2">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://live-news-manifest.tubi.video/live-news-manifest/csm/extlive/tubiprd01,Fox-Sports-Espanol2.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/xrKp7ku.png" alt="fox deportes">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/XNVqSVn.png" alt="Las Estrellas">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://spt-novelas-1-us.samsung.wurl.tv/3000.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/WTthEyK.png" alt="Sony Novelas">
+        </div>
+    </a>
+        <a href="https://spinoff.link/live/m3u8.php?url=https://tv1.strm2234.xyz/hbo/index.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/BST42Yz.png" alt="HBO">
+        </div>
+    </a>
+     <a href="https://spinoff.link/live/mpd.php?url=https://live4-ott.izzigo.tv/out/u/dash/DISTRITO-COMEDIA-HD/default.mpd&k=12ec40e04cf8c533cf306321052726a8&id=e69f7cb969df2eef1b60ddea0458bfef" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/A93Cqd8.png" alt="dcomedia">
+        </div>
+    </a>
+                <a href="https://spinoff.link/live/mpd.php?url=https://live2-ott.izzigo.tv/out/u/dash/DE-PELICULA-SD/default.mpd&k=d17913671a71821ed7e4c4937cd2fba58&id=208012d154bf5128dc04433c22e00698" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/5iCaZOo.png" alt="dpelicula">
+        </div>
+    </a>
+                    <a href="https://spinoff.link/live/mpd.php?url=https://live2-ott.izzigo.tv/out/u/dash/DE-PELICULA-SD/default.mpd&k=d17913671a71821ed7e4c4937cd2fba58&id=208012d154bf5128dc04433c22e00698" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/GUDdRWQ.png" alt="dcomediahd">
+        </div>
+    </a>
+                    <a href="https://spinoff.link/live/mpd.php?url=https://live4-ott.izzigo.tv/out/u/dash/GOLDEN-MULTIPLEX/default.mpd&k=521a2cfdd3f649a9543422dc41fa4ca0&id=f23601997bc024ea96b6b9d1e2b8b3fc" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/s0uqmG2.png" alt="goldenmultiplex">
+        </div>
+    </a>
+                    <a href="https://spinoff.link/live/mpd.php?url=https://live3-ott.izzigo.tv/out/u/dash/GOLDEN-SD/default.mpd&k=247351382fcd721f2872c4bda15c5245&id=bc0e4c7dfb10d483357572000180cca5" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/K8YNZpL.png" alt="goldensd">
+        </div>
+    </a>
+                    <a href="https://spinoff.link/live/mpd.php?url=https://live3-ott.izzigo.tv/out/u/dash/GOLDEN-EDGE-SD/default.mpd&k=6e8bd53378356ed7f5103d91efb5e54e&id=98aa90cb620b972a0d0d66a51cdaca56" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/VXRwoIJ.png" alt="goldenedge">
+        </div>
+    </a>
+                    <a href="https://spinoff.link/live/mpd.php?url=https://live4-ott.izzigo.tv/out/u/dash/GOLDEN-HD/default.mpd&k=4cc4d32453d2d29831b0a733d2763f69&id=ea0a062b63b4b0a58b35e10c02bf0ab9" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/4jeOzt7.png" alt="gpremier">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/mpd.php?url=https://live3-ott.izzigo.tv/out/u/dash/GOLDEN-PREMIER--2HR-HD/default.mpd&k=aacbecfb7f1da441a420a582400102da&id=717324c2c4e6694baddacfd5fbd3a20f" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/DWyozGk.png" alt="gpremier2">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/mpd.php?url=https://live-atv-cdn.izzigo.tv/5/out/u/dash/WARNER-HD/default.mpd&id=a62d210f0f907a0ebfb84a790d42780b&k=590779be25e38a41d817f6ad13f5b070" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/b11YIGC.png" alt="warner">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/mpd.php?url=https://live-atv-cdn.izzigo.tv/2/out/u/dash/FOX-HD/default.mpd&id=3c768a448428f7e87aaf69da2a0662b0&k=7f98805ed862b863d51e93f884161b74" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/EU4EFgN.png" alt="starchannel">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/mpd.php?url=https://live-atv-cdn.izzigo.tv/5/out/u/dash/ADULT-SWIM-HD/default.mpd&id=694fa2e355b31ac2c52d0a56d3d8da59&k=0d7eff2e4dc61d48489555068b0db46a" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/hQqkfCd.png" alt="adultswin">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/m3u8.php?url=https://tv1.strm2234.xyz/space/index.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/xNOIAQ6.png" alt="space">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/m3u8.php?url=https://tv1.strm2234.xyz/tnt/index.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/5K1ydyv.png" alt="tntseries">
+        </div>
+    </a>
+                        <a href="https://spinoff.link/live/m3u8.php?url=https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01024-olympusat-chiquilines-ono/playlist.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://cdn.m3u.cl/logo/1279_Chiquilines___Freetv_com.png" alt="freetv">
+        </div>
+    </a>
+                            <a href="https://spinoff.link/live/m3u8.php?url=https://cloud5.streaminglivehd.com:3555/live/latinokidslive.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://cdn.m3u.cl/logo/1019_Latino_Kids_TV.png" alt="lkids">
+        </div>
+    </a>
+         <a href="https://spinoff.link/live/m3u8.php?url=https://tv.streaming-chile.com:19360/8068/8068.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel infantil">
+            <img src="https://imgur.com/ieOn20X.png" alt="locomotion">
+        </div>
+    </a>
+             <a href="https://spinoff.link/live/m3u8.php?url=https://vivo.canaloncelive.tv/alivepkgr3/ngrp:cepro_all/playlist.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel cultura">
+            <img src="https://imgur.com/nH15U8p.png" alt="once">
+        </div>
+    </a>
+    
+            <a href="https://spinoff.link/live/m3u8.php?url=https://lotus.stingray.com/manifest/ose-108ads-montreal/samsungtvplus/master.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel musica">
+            <img src="https://i.imgur.com/PZhxyIT.png" alt="country">
+        </div>
+    </a> 
+
+        <a href="https://spinoff.link/live/m3u8.php?url=https://30a-tv.com/feeds/ceftech/30atvmusic.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel musica">
+            <img src="https://i.imgur.com/gNWg9tl.png" alt="vmusic">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/m3u8.php?url=https://seo.tv.bo/tv/IPSEO-TV-4.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel cineseries">
+            <img src="https://imgur.com/lTUXCtJ.png" alt="seotvpeliculas">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/m3u8.php?url=https://tv.streaming-chile.com:19360/8068/8068.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://imgur.com/MEie9bH.png" alt="aniretro">
+        </div>
+    </a> 
+    
+                <a href="https://spinoff.link/live/m3u8.php?url=https://cloudvideo.servers10.com:8081/8096/index.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://imgur.com/QpLPJaV.png" alt="dreiko">
+        </div>
+    </a> 
+    
+         <a href="https://spinoff.link/live/m3u8.php?url=https://streaming-cl.sh1ny.space/memfs/e8a8e789-170b-4de4-a33b-90a9a475ce65.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://imgur.com/LHjioE5.png" alt="energeek">
+        </div>
+    </a> 
+    
+        <a href="https://spinoff.link/live/m3u8.php?url=https://streaming-cl.sh1ny.space/memfs/0e41fc31-9f44-46d4-8712-0446e2f3dcaa.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://imgur.com/1VTZRul.png" alt="kanadetv">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/m3u8.php?url=https://magicstream.ddns.net/magicstream/stream.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://imgur.com/ks0max7.png" alt="magickids">
+        </div>
+    </a> 
+    
+                <a href="https://spinoff.link/live/m3u8.php?url=https://stream.skarnetchile.com:19360/monitvhd/monitvhd.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel infantil">
+            <img src="https://imgur.com/nn9GsYY.png" alt="monitv">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/m3u8.php?url=https://mitv.zplay.cl/Ztv/video.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel animacion">
+            <img src="https://imgur.com/SzBY16d.png" alt="ztv">
+        </div>
+    </a> 
+    
+        <a href="https://spinoff.link/live/m3u8.php?url=https://mdstrm.com/live-stream-playlist/609b243156cca108312822a6.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/dzSU3Qa.png" alt="auno">
+        </div>
+    </a> 
+    
+        <a href="https://spinoff.link/live/m3u8.php?url=https://mdstrm.com/live-stream-playlist/57b4dbf5dbbfc8f16bb63ce1.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel entretenimiento">
+            <img src="https://imgur.com/JYideTa.png" alt="multimediosmonterrey">
+        </div>
+    </a>
+    
+        <a href="https://spinoff.link/live/m3u8.php?url=https://mdstrm.com/live-stream-playlist/60b578b060947317de7b57ac.m3u8" target="_blank"> <!-- Enlace del -->
+        <div class="channel noticias">
+            <img src="https://imgur.com/W4tnl6S.png" alt="adn">
+        </div>
+        
+                <a href="https://spinoff.link/live/mpd.php?url=https://live5-ott.izzigo.tv/out/u/dash/TELEHIT-SD/default.mpd&k=654256cc5939f6d502969b4fbbc47286&id=6ed36c5f7d0775e21f0748dd17520bc9" target="_blank"> <!-- Enlace del -->
+        <div class="channel musica">
+            <img src="https://imgur.com/lsps7kt.png" alt="telehist">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/mpd.php?url=https://live2-ott.izzigo.tv/out/u/dash/TELEHIT-URBANO-SD/default.mpd&k=a375d0862429a8d26fff6655e4865cd5&id=110837747ee285d4cfd1145a13288d35" target="_blank"> <!-- Enlace del -->
+        <div class="channel musica">
+            <img src="https://imgur.com/ArV75Kk.png" alt="telehit">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/mpd.php?url=https://live1-ott.izzigo.tv/out/u/dash/FOX-SPORTS-PREMIUM-HD/default.mpd&id=0fefd5d94a8cb5b40c057ab182f7dc27&k=5548c4823ff7f1ea61bafb7cbc19e005" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/80pWZ5Y.png" alt="foxsport">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/mpd.php?url=https://live4-ott.izzigo.tv/out/u/dash/FOX-SPORTS-2-HD/default.mpd&id=23986dae03fa883ed8e489cbf70f9ec3&k=6a42c42732a9dd1da1205971b2c5c535" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/vxrssrK.png" alt="foxsport2">
+        </div>
+    </a> 
+    
+            <a href="https://spinoff.link/live/mpd.php?url=https://live1-ott.izzigo.tv/out/u/dash/TUDN-HD/default.mpd&id=2722647f77b44824c432a3c4555830a2&k=1734befb82f4b438bd84195f6c212e7b" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/EYGMJvC.png" alt="tudn">
+        </div>
+    </a> 
+
+        <a href="https://spinoff.link/live/mpd.php?url=https://live1-ott.izzigo.tv/out/u/dash/ESPN-HD/default.mpd&id=bb43112b7b72e9c287da0ecdec8606a7&k=29e3d2678107f0ab0b35b6537c734f2a" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/uYr64T1.png" alt="espn">
+        </div>
+    </a> 
+            <a href="https://spinoff.link/live/mpd.php?url=https://dish.akamaized.net/Content/DASH/Live/channel(espn_2)/manifest.mpd&id=ae99daa35220336fe9460b9060fa65a9&k=ac284e8e24296f30496d1f39a7138205" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/0GQqFzl.png" alt="espn2">
+        </div>
+    </a> 
+            <a href="https://spinoff.link/live/mpd.php?url=https://dish.akamaized.net/Content/DASH/Live/channel(espn_3)/manifest.mpd&id=430f38110162f19a042b4dcdc2005140&k=50541179fbd5750aea8767cb6e6b3a7b" target="_blank"> <!-- Enlace del --> 
+        <div class="channel deportes">
+            <img src="https://imgur.com/9AVChQc.png" alt="espn3">
+        </div>
+    </a> 
+            <a href="https://spinoff.link/live/m3u8.php?url=https://dish.akamaized.net/Content/DASH/Live/channel(espn_extra)/manifest.mpd&id=ef0779dad62e7a021ac8b82a5a8dd329&k=e18c7892858eb04bf8d2dcf4f057dd77" target="_blank"> <!-- Enlace del -->
+        <div class="channel deportes">
+            <img src="https://imgur.com/Hopiev6.png" alt="espn4">
+        </div>
+    </a> 
+            <a href="https://spinoff.link/live/m3u8.php?url=https://tv.streaming-chile.com:19360/8134/8134.m3u8" target="_blank">
+        <div class="channel cultura">
+            <img src="https://imgur.com/Q9Sg7FJ.png" alt="aniretro">
+        </div>
+    </a> 
+            <a href="https://spinoff.link/live/m3u8.php?url=https://mitv.zplay.cl/Ztv/tracks-v1a1/mono.ts.m3u8" target="_blank">
+        <div class="channel cultura">
+            <img src="https://imgur.com/t5Xx3Ml.png" alt="zplay">
+        </div>
+    </a> 
+
+    
+        <!-- Agrega más canales aquí -->
+        <!--
+        <a href="https://spinoff.link/live/m3u8.php?url=https://rtv.fullhd-streaming.com:19360/dreikotv/dreikotv.m3u8" target="_blank">
+        <div class="channel cultura">
+            <img src="https://imgur.com/IHVHNE4.png" alt="zplay">
+        </div>
+    </a> 
+    -->
+
+</div>
+
+
+
+            <div class="footer-message">
+        NUEVOS CANALES TODOS LOS DÍAS
+    </div>
+
+
+
+<!-- Feed de Noticias -->
+<div style="border: 1px solid #444; padding: 10px; margin: 20px 0; max-width: 100%; overflow: hidden; background-color: #000; color: #fff;">
+    <h2 style="font-family: Arial, sans-serif; font-size: 20px; text-align: center; color: #FFD700;">Últimas Noticias</h2>
+    <div id="feed-container">Cargando noticias...</div>
+</div>
+
+<script>
+    // URL del feed RSS
+    const feedUrl = 'https://spinoff.link/feed'; // Reemplaza con tu URL RSS
+    const feedContainer = document.getElementById('feed-container');
+
+    // Función para extraer la primera imagen de un texto HTML
+    function extractImageFromDescription(description) {
+        const imgTag = description.match(/<img[^>]+src="([^">]+)"/);
+        return imgTag ? imgTag[1] : '';
+    }
+
+    // Cargar y mostrar el feed
+    async function loadRSS() {
+        try {
+            const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`);
+            const data = await response.json();
+
+            if (data.items) {
+                const newsHtml = data.items.map(item => {
+                    const imgSrc = item.enclosure?.link || extractImageFromDescription(item.description);
+                    return `
+                        <div style="margin-bottom: 15px; border-bottom: 1px solid #555; padding-bottom: 10px;">
+                            ${imgSrc ? `<img src="${imgSrc}" alt="${item.title}" style="max-width: 100%; height: auto; margin-bottom: 5px; border: 1px solid #555;">` : ''}
+                            <a href="${item.link}" target="_blank" style="font-size: 18px; font-weight: bold; text-decoration: none; color: #FFD700;">
+                                ${item.title}
+                            </a>
+                            <p style="margin: 5px 0; color: #ccc;">${item.description}</p>
+                        </div>
+                    `;
+                }).join('');
+                feedContainer.innerHTML = newsHtml;
+            } else {
+                feedContainer.innerHTML = '<p style="color: #ccc;">No se encontraron noticias.</p>';
+            }
+        } catch (error) {
+            console.error('Error al cargar el feed:', error);
+            feedContainer.innerHTML = '<p style="color: #f00;">Error al cargar las noticias.</p>';
+        }
+    }
+
+    loadRSS();
+</script>
+
+
+
+
+
+    <script src="https://spinoff.link/live/script.js"></script>
+    
+    <script type="text/javascript">
+document.oncontextmenu = function(){return false;}
+</script>
+    
+        <!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = "www.themoneytizer.com";
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://cmp.inmobi.com'
+    .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js?tag_version=V3');
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        if(args[0] === 'init' && typeof args[3] === 'object') {
+          args[3] = Object.assign(args[3], { tag_version: 'V3' });
+        }
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+
+<div id="94372-6"><script src="//ads.themoneytizer.com/s/gen.js?type=6"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=94372&formatId=6"></script></div>
+
+   <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4624434,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4624434&101" alt="contador gratis" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+
+	<div class="mensaje-fijo">
+        <a target="_blank" href="https://tecnotv.club">Disfruta de listas IPTV 
+		gratuitas presionando aquí</a></div>
+
+</body>
+</html>
