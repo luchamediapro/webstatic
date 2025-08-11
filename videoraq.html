@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmisión en Vivo</title>
+  <style>
+    @keyframes fuego {
+        0% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
+        50% { box-shadow: 0px 0px 30px rgba(255, 0, 0, 1), 0px 0px 40px rgba(255, 140, 0, 0.9); }
+        100% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #b71e00;
+        color: red;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contenedor {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .titulo {
+        font-size: 5vw;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .video-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video-container {
+        width: 100%;
+        max-width: 800px;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        animation: fuego 1.5s infinite alternate;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
+    }
+
+    .botones-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .boton {
+        padding: 10px 15px;
+        font-size: 1.2vw;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .boton:hover {
+        background-color: darkred;
+    }
+
+    @media (max-width: 768px) {
+        .titulo {
+            font-size: 6vw;
+        }
+
+        .boton {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .titulo {
+            font-size: 8vw;
+        }
+
+        .botones-container {
+            flex-direction: column;
+        }
+
+        .boton {
+            width: 100%;
+            font-size: 12px;
+            padding: 10px;
+        }
+    }
+
+    #contador {
+        color: orange;
+        font-size: 3vw;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    #loadingMensaje {
+        color: white;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="titulo" id="titulo-transmision">🔥LAS SEÑALES SE ACTIVARAN CUANDO EL CONTEO LLEGUE A 0🔥</div>
+
+    <div id="contador">
+      ⏳ La transmisión comienza en: <br />
+      <span id="tiempoRestante">00:00:00</span>
+    </div>
+
+    <div id="loadingMensaje" style="display: none;">SELECCIONA LA PARTE A VER:</div>
+
+    <div class="video-wrapper" style="display:none;" id="video-wrapper">
+      <div class="video-container">
+        <iframe id="videoFrame" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+      </div>
+    </div>
+
+    <div class="botones-container">
+      <button class="boton" onclick="ejecutarAcciones('https://videoteca.onrender.com/?id=raq1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
+        <button class="boton" onclick="ejecutarAcciones('https://videoteca.onrender.com/?id=raq2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
+
+    </div>
+  </div>
+
+  <script>
+    function ejecutarAcciones(iframeUrl, ventanaUrl) {
+      document.getElementById("videoFrame").src = iframeUrl;
+      window.open(ventanaUrl, "_blank", "width=800,height=600,noopener,noreferrer");
+    }
+
+    const fechaObjetivo = new Date("2025-06-06T12:19:00");
+
+    const contador = document.getElementById("contador");
+    const tiempoRestante = document.getElementById("tiempoRestante");
+    const videoWrapper = document.getElementById("video-wrapper");
+    const titulo = document.getElementById("titulo-transmision");
+    const iframe = document.getElementById("videoFrame");
+    const loadingMensaje = document.getElementById("loadingMensaje");
+
+    const urlVideoInicial = "/videoteca?id=senal1";
+
+    function actualizarContador() {
+      const ahora = new Date();
+      const diferencia = fechaObjetivo - ahora;
+
+      if (diferencia <= 0) {
+        contador.style.display = "none";
+        titulo.textContent = "🔴REPETICION SMACKDOWN 8 DE AGOSTO 2025🔴";
+        videoWrapper.style.display = "flex";
+        loadingMensaje.style.display = "block";
+        iframe.src = urlVideoInicial;
+        clearInterval(intervalo);
+
+        // Opcional: Ocultar mensaje después de unos segundos
+        setTimeout(() => {
+          loadingMensaje.style.display = "none";
+        }, 3000);
+
+        return;
+      }
+
+      const horas = String(Math.floor((diferencia / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+      const minutos = String(Math.floor((diferencia / (1000 * 60)) % 60)).padStart(2, "0");
+      const segundos = String(Math.floor((diferencia / 1000) % 60)).padStart(2, "0");
+
+      tiempoRestante.textContent = `${horas}:${minutos}:${segundos}`;
+    }
+
+    actualizarContador();
+    const intervalo = setInterval(actualizarContador, 1000);
+  </script>
+</body>
+</html>
