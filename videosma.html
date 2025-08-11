@@ -37,23 +37,36 @@
     }
 
     .video-container {
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        background: black;
-        border-radius: 10px;
-        animation: fuego 1.5s infinite alternate;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      background: black;
+      border-radius: 10px;
+      animation: fuego 1.5s infinite alternate;
+      overflow: hidden;
+      padding-top: 0; /* default sin padding */
+      height: 450px;  /* default altura desktop */
     }
 
     .video-container iframe {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Móviles y tablets: padding para mantener proporción 16:9 */
+    @media (max-width: 950px) {
+      .video-container {
+        padding-top: 56.25%; /* 16:9 */
+        height: 0; /* para que el padding defina la altura */
+      }
+      .video-container iframe {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
         width: 100%;
         height: 100%;
-        border: none;
+      }
     }
 
     .botones-container {
@@ -139,7 +152,6 @@
         from { transform: translateY(-4px); opacity: 0; }
         to   { transform: translateY(0);     opacity: 1; }
     }
-    /* ===== fin menú ===== */
 
     @media (max-width: 950px) {
         .titulo {
@@ -168,10 +180,6 @@
         .titulo {
             font-size: 8vw;
             padding: 0 10px;
-        }
-
-        .video-container {
-            padding-top: 56.25%; /* mantiene 16:9 en móviles */
         }
 
         .botones-container {
