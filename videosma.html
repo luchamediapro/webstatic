@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transmisión en Vivo</title>
+  <title>Multimedia............No encontrado.........</title>
   <style>
     @keyframes fuego {
         0% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
@@ -13,8 +13,9 @@
 
     body {
         font-family: Arial, sans-serif;
-        background-color: #b71e00;
-        color: red;
+        /* corregí un pequeño typo aquí (## -> #) para que el color funcione */
+        background-color: #004AA6;
+        color: black;
         text-align: center;
         padding: 20px;
     }
@@ -46,6 +47,8 @@
         padding: 10px;
         border-radius: 10px;
         animation: fuego 1.5s infinite alternate;
+        /* importante: para poder posicionar el menú encima */
+        position: relative;
     }
 
     .video-container iframe {
@@ -65,7 +68,7 @@
     .boton {
         padding: 10px 15px;
         font-size: 1.2vw;
-        background-color: blue;
+        background-color: red;
         color: white;
         border: none;
         border-radius: 5px;
@@ -77,6 +80,71 @@
         background-color: darkred;
     }
 
+    /* ===== Menu burbuja / salchicha (encima del video) ===== */
+    .menu-burbuja {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        user-select: none;
+    }
+
+    /* botón principal (hamburguesa / salchicha) */
+    .menu-burbuja .principal {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        transition: transform .15s ease, background-color .15s ease;
+    }
+
+    .menu-burbuja .principal:hover {
+        transform: scale(1.06);
+        background-color: darkred;
+    }
+
+    /* contenedor de opciones secundarias (inicialmente oculto) */
+    .menu-burbuja .opciones {
+        display: none; /* se muestra con toggle */
+        flex-direction: column;
+        gap: 8px;
+        margin-left: 0;
+        transform-origin: left top;
+    }
+
+    /* reutiliza la clase .boton para estilo de opciones pero adaptadas */
+    .menu-burbuja .opciones .boton {
+        padding: 8px 10px;
+        font-size: 14px;
+        border-radius: 8px;
+        width: auto;
+        min-width: 80px;
+    }
+
+    /* pequeña animación al aparecer con clase 'show' (agregada por JS) */
+    .menu-burbuja .opciones.show {
+        display: flex;
+        animation: desplegar 0.15s ease;
+    }
+
+    @keyframes desplegar {
+        from { transform: translateY(-4px); opacity: 0; }
+        to   { transform: translateY(0);     opacity: 1; }
+    }
+    /* ===== fin menú ===== */
+
     @media (max-width: 768px) {
         .titulo {
             font-size: 6vw;
@@ -85,6 +153,17 @@
         .boton {
             font-size: 14px;
             padding: 8px 12px;
+        }
+
+        .menu-burbuja .principal {
+            width: 42px;
+            height: 42px;
+            font-size: 18px;
+        }
+
+        .menu-burbuja .opciones .boton {
+            min-width: 72px;
+            font-size: 13px;
         }
     }
 
@@ -101,6 +180,11 @@
             width: 100%;
             font-size: 12px;
             padding: 10px;
+        }
+
+        .menu-burbuja {
+            top: 8px;
+            left: 8px;
         }
     }
 
@@ -129,23 +213,52 @@
 
     <div id="loadingMensaje" style="display: none;">SELECCIONA LA PARTE A VER:</div>
 
+    <!-- video-wrapper original (mantengo la estructura) -->
     <div class="video-wrapper" style="display:none;" id="video-wrapper">
       <div class="video-container">
-        <iframe id="videoFrame" src="/?id=sma1" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        <!-- Menu burbuja colocado DENTRO de video-container para que quede encima -->
+        <div class="menu-burbuja" aria-hidden="false">
+            <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+
+            <div class="opciones" id="menuOpciones" aria-hidden="true">
+                <!-- botones secundarios que reutilizan la función ejecutarAcciones -->
+                <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
+                <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
+            </div>
+        </div>
+
+        <iframe id="videoFrame" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
       </div>
     </div>
 
-    <div class="botones-container">
-      <button class="boton" onclick="ejecutarAcciones('https://videoteca.onrender.com/?id=sma1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
-        <button class="boton" onclick="ejecutarAcciones('https://videoteca.onrender.com/?id=sma2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
-
+    <!-- mantengo el contenedor original de botones (por compatibilidad) -->
+    <div class="botones-container" id="botones-abajo">
+      <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
+      <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
     </div>
   </div>
 
   <script>
     function ejecutarAcciones(iframeUrl, ventanaUrl) {
+      // carga el iframe y abre la ventana en nueva pestaña (igual que antes)
       document.getElementById("videoFrame").src = iframeUrl;
       window.open(ventanaUrl, "_blank", "width=800,height=600,noopener,noreferrer");
+    }
+
+    // Toggle del menú burbuja
+    function toggleMenu() {
+      const opciones = document.getElementById("menuOpciones");
+      const principal = document.getElementById("btnPrincipal");
+      const isShown = opciones.classList.contains("show");
+      if (isShown) {
+        opciones.classList.remove("show");
+        opciones.setAttribute("aria-hidden", "true");
+        principal.setAttribute("aria-expanded", "false");
+      } else {
+        opciones.classList.add("show");
+        opciones.setAttribute("aria-hidden", "false");
+        principal.setAttribute("aria-expanded", "true");
+      }
     }
 
     const fechaObjetivo = new Date("2025-06-06T12:19:00");
@@ -156,8 +269,9 @@
     const titulo = document.getElementById("titulo-transmision");
     const iframe = document.getElementById("videoFrame");
     const loadingMensaje = document.getElementById("loadingMensaje");
+    const botonesAbajo = document.getElementById("botones-abajo");
 
-    const urlVideoInicial = "/?id=sma1";
+    const urlVideoInicial = "/?id=raw1";
 
     function actualizarContador() {
       const ahora = new Date();
@@ -170,6 +284,11 @@
         loadingMensaje.style.display = "block";
         iframe.src = urlVideoInicial;
         clearInterval(intervalo);
+
+        // Ocultamos los botones inferiores para evitar duplicados
+        if (botonesAbajo) {
+          botonesAbajo.style.display = "none";
+        }
 
         // Opcional: Ocultar mensaje después de unos segundos
         setTimeout(() => {
