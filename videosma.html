@@ -13,7 +13,6 @@
 
     body {
         font-family: Arial, sans-serif;
-        /* corregí un pequeño typo aquí (## -> #) para que el color funcione */
         background-color: #004AA6;
         color: black;
         text-align: center;
@@ -47,12 +46,12 @@
         padding: 10px;
         border-radius: 10px;
         animation: fuego 1.5s infinite alternate;
-        /* importante: para poder posicionar el menú encima */
         position: relative;
     }
 
     .video-container iframe {
-        width: 50%;
+        width: 100%;       /* ancho completo para responsividad */
+        max-width: 800px;  /* max ancho en desktop */
         aspect-ratio: 16 / 9;
         border: none;
     }
@@ -66,14 +65,15 @@
     }
 
     .boton {
-        padding: 10px 15px;
-        font-size: 1.2vw;
+        padding: 12px 20px;
+        font-size: 1.4vw;
         background-color: red;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         transition: 0.3s;
+        min-width: 100px;
     }
 
     .boton:hover {
@@ -93,7 +93,6 @@
         user-select: none;
     }
 
-    /* botón principal (hamburguesa / salchicha) */
     .menu-burbuja .principal {
         width: 48px;
         height: 48px;
@@ -115,16 +114,14 @@
         background-color: darkred;
     }
 
-    /* contenedor de opciones secundarias (inicialmente oculto) */
     .menu-burbuja .opciones {
-        display: none; /* se muestra con toggle */
+        display: none;
         flex-direction: column;
         gap: 8px;
         margin-left: 0;
         transform-origin: left top;
     }
 
-    /* reutiliza la clase .boton para estilo de opciones pero adaptadas */
     .menu-burbuja .opciones .boton {
         padding: 8px 10px;
         font-size: 14px;
@@ -133,7 +130,6 @@
         min-width: 80px;
     }
 
-    /* pequeña animación al aparecer con clase 'show' (agregada por JS) */
     .menu-burbuja .opciones.show {
         display: flex;
         animation: desplegar 0.15s ease;
@@ -151,8 +147,9 @@
         }
 
         .boton {
-            font-size: 14px;
-            padding: 8px 12px;
+            font-size: 16px;
+            padding: 10px 18px;
+            min-width: 90px;
         }
 
         .menu-burbuja .principal {
@@ -163,23 +160,31 @@
 
         .menu-burbuja .opciones .boton {
             min-width: 72px;
-            font-size: 13px;
+            font-size: 14px;
         }
     }
 
     @media (max-width: 480px) {
         .titulo {
             font-size: 8vw;
+            padding: 0 10px;
+        }
+
+        .video-container {
+            padding: 5px;
         }
 
         .botones-container {
             flex-direction: column;
+            gap: 10px;
+            padding: 0 10px;
         }
 
         .boton {
             width: 100%;
-            font-size: 12px;
-            padding: 10px;
+            font-size: 16px;
+            padding: 14px 0;
+            min-width: auto;
         }
 
         .menu-burbuja {
@@ -213,15 +218,12 @@
 
     <div id="loadingMensaje" style="display: none;">SELECCIONA LA PARTE A VER:</div>
 
-    <!-- video-wrapper original (mantengo la estructura) -->
     <div class="video-wrapper" style="display:none;" id="video-wrapper">
       <div class="video-container">
-        <!-- Menu burbuja colocado DENTRO de video-container para que quede encima -->
         <div class="menu-burbuja" aria-hidden="false">
             <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
 
             <div class="opciones" id="menuOpciones" aria-hidden="true">
-                <!-- botones secundarios que reutilizan la función ejecutarAcciones -->
                 <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
                 <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
             </div>
@@ -231,7 +233,6 @@
       </div>
     </div>
 
-    <!-- mantengo el contenedor original de botones (por compatibilidad) -->
     <div class="botones-container" id="botones-abajo">
       <button class="boton" onclick="ejecutarAcciones('/?id=sma1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
       <button class="boton" onclick="ejecutarAcciones('/?id=sma2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
@@ -240,12 +241,10 @@
 
   <script>
     function ejecutarAcciones(iframeUrl, ventanaUrl) {
-      // carga el iframe y abre la ventana en nueva pestaña (igual que antes)
       document.getElementById("videoFrame").src = iframeUrl;
       window.open(ventanaUrl, "_blank", "width=800,height=600,noopener,noreferrer");
     }
 
-    // Toggle del menú burbuja
     function toggleMenu() {
       const opciones = document.getElementById("menuOpciones");
       const principal = document.getElementById("btnPrincipal");
@@ -285,12 +284,10 @@
         iframe.src = urlVideoInicial;
         clearInterval(intervalo);
 
-        // Ocultamos los botones inferiores para evitar duplicados
         if (botonesAbajo) {
           botonesAbajo.style.display = "none";
         }
 
-        // Opcional: Ocultar mensaje después de unos segundos
         setTimeout(() => {
           loadingMensaje.style.display = "none";
         }, 3000);
