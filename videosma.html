@@ -37,22 +37,22 @@
     }
 
     .video-container {
+        position: relative;
         width: 100%;
-        max-width: 100%;
+        max-width: 800px;
         background: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
         border-radius: 10px;
         animation: fuego 1.5s infinite alternate;
-        position: relative;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
     }
 
     .video-container iframe {
-        width: 100%;       /* ancho completo para responsividad */
-        max-width: 800px;  /* max ancho en desktop */
-        aspect-ratio: 16 / 9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         border: none;
     }
 
@@ -171,7 +171,7 @@
         }
 
         .video-container {
-            padding: 5px;
+            padding-top: 56.25%; /* mantiene 16:9 en móviles */
         }
 
         .botones-container {
