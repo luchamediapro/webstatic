@@ -6,212 +6,194 @@
   <title>Multimedia............No encontrado.........</title>
   <style>
     @keyframes fuego {
-        0% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
-        50% { box-shadow: 0px 0px 30px rgba(255, 0, 0, 1), 0px 0px 40px rgba(255, 140, 0, 0.9); }
-        100% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
+      0% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
+      50% { box-shadow: 0px 0px 30px rgba(255, 0, 0, 1), 0px 0px 40px rgba(255, 140, 0, 0.9); }
+      100% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background-color: #004AA6;
-        color: black;
-        text-align: center;
-        padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: black;
+      text-align: center;
+      padding: 20px;
     }
 
     .contenedor {
-        max-width: 100%;
-        margin: auto;
+      max-width: 100%;
+      margin: auto;
     }
 
     .titulo {
-        font-size: 5vw;
-        font-weight: bold;
-        margin-bottom: 20px;
+      font-size: 5vw;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
     .video-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .video-container {
-      position: relative;
+      aspect-ratio: 16 / 9;
       width: 100%;
-      max-width: 800px;
+      max-width: 600px;
       background: black;
       border-radius: 10px;
       animation: fuego 1.5s infinite alternate;
       overflow: hidden;
-      padding-top: 0; /* default sin padding */
-      height: 450px;  /* default altura desktop */
     }
 
     .video-container iframe {
-      position: relative;
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* Móviles y tablets: padding para mantener proporción 16:9 */
-    @media (max-width: 950px) {
-      .video-container {
-        padding-top: 56.25%; /* 16:9 */
-        height: 0; /* para que el padding defina la altura */
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
     .botones-container {
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     .boton {
-        padding: 12px 20px;
-        font-size: 1.4vw;
-        background-color: red;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-        min-width: 100px;
+      padding: 12px 20px;
+      font-size: 1.4vw;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      min-width: 100px;
     }
 
     .boton:hover {
-        background-color: darkred;
+      background-color: darkred;
     }
 
-    /* ===== Menu burbuja / salchicha (encima del video) ===== */
     .menu-burbuja {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        z-index: 60;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        user-select: none;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      user-select: none;
     }
 
     .menu-burbuja .principal {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: red;
-        color: white;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-        transition: transform .15s ease, background-color .15s ease;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform .15s ease, background-color .15s ease;
     }
 
     .menu-burbuja .principal:hover {
-        transform: scale(1.06);
-        background-color: darkred;
+      transform: scale(1.06);
+      background-color: darkred;
     }
 
     .menu-burbuja .opciones {
-        display: none;
-        flex-direction: column;
-        gap: 8px;
-        margin-left: 0;
-        transform-origin: left top;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      margin-left: 0;
+      transform-origin: left top;
     }
 
     .menu-burbuja .opciones .boton {
-        padding: 8px 10px;
-        font-size: 14px;
-        border-radius: 8px;
-        width: auto;
-        min-width: 80px;
+      padding: 8px 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      width: auto;
+      min-width: 80px;
     }
 
     .menu-burbuja .opciones.show {
-        display: flex;
-        animation: desplegar 0.15s ease;
+      display: flex;
+      animation: desplegar 0.15s ease;
     }
 
     @keyframes desplegar {
-        from { transform: translateY(-4px); opacity: 0; }
-        to   { transform: translateY(0);     opacity: 1; }
+      from { transform: translateY(-4px); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
     }
 
     @media (max-width: 950px) {
-        .titulo {
-            font-size: 6vw;
-        }
+      .titulo {
+        font-size: 6vw;
+      }
 
-        .boton {
-            font-size: 16px;
-            padding: 10px 18px;
-            min-width: 90px;
-        }
+      .boton {
+        font-size: 16px;
+        padding: 10px 18px;
+        min-width: 90px;
+      }
 
-        .menu-burbuja .principal {
-            width: 42px;
-            height: 42px;
-            font-size: 18px;
-        }
+      .menu-burbuja .principal {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
 
-        .menu-burbuja .opciones .boton {
-            min-width: 72px;
-            font-size: 14px;
-        }
+      .menu-burbuja .opciones .boton {
+        min-width: 72px;
+        font-size: 14px;
+      }
     }
 
     @media (max-width: 480px) {
-        .titulo {
-            font-size: 8vw;
-            padding: 0 10px;
-        }
+      .titulo {
+        font-size: 8vw;
+        padding: 0 10px;
+      }
 
-        .botones-container {
-            flex-direction: column;
-            gap: 10px;
-            padding: 0 10px;
-        }
+      .botones-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+      }
 
-        .boton {
-            width: 100%;
-            font-size: 16px;
-            padding: 14px 0;
-            min-width: auto;
-        }
+      .boton {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 0;
+        min-width: auto;
+      }
 
-        .menu-burbuja {
-            top: 8px;
-            left: 8px;
-        }
+      .menu-burbuja {
+        top: 8px;
+        left: 8px;
+      }
     }
 
     #contador {
-        color: orange;
-        font-size: 3vw;
-        font-weight: bold;
-        margin-bottom: 20px;
+      color: orange;
+      font-size: 3vw;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
     #loadingMensaje {
-        color: white;
-        font-size: 1.5em;
-        margin-bottom: 10px;
+      color: black;
+      font-size: 1.5em;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -229,14 +211,12 @@
     <div class="video-wrapper" style="display:none;" id="video-wrapper">
       <div class="video-container">
         <div class="menu-burbuja" aria-hidden="false">
-            <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
-
-            <div class="opciones" id="menuOpciones" aria-hidden="true">
-                <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
-                <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
-            </div>
+          <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+          <div class="opciones" id="menuOpciones" aria-hidden="true">
+            <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
+            <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
+          </div>
         </div>
-
         <iframe id="videoFrame" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
       </div>
     </div>
@@ -278,40 +258,4 @@
     const loadingMensaje = document.getElementById("loadingMensaje");
     const botonesAbajo = document.getElementById("botones-abajo");
 
-    const urlVideoInicial = "/?id=sma1";
-
-    function actualizarContador() {
-      const ahora = new Date();
-      const diferencia = fechaObjetivo - ahora;
-
-      if (diferencia <= 0) {
-        contador.style.display = "none";
-        titulo.textContent = "";
-        videoWrapper.style.display = "flex";
-        loadingMensaje.style.display = "block";
-        iframe.src = urlVideoInicial;
-        clearInterval(intervalo);
-
-        if (botonesAbajo) {
-          botonesAbajo.style.display = "none";
-        }
-
-        setTimeout(() => {
-          loadingMensaje.style.display = "none";
-        }, 3000);
-
-        return;
-      }
-
-      const horas = String(Math.floor((diferencia / (1000 * 60 * 60)) % 24)).padStart(2, "0");
-      const minutos = String(Math.floor((diferencia / (1000 * 60)) % 60)).padStart(2, "0");
-      const segundos = String(Math.floor((diferencia / 1000) % 60)).padStart(2, "0");
-
-      tiempoRestante.textContent = `${horas}:${minutos}:${segundos}`;
-    }
-
-    actualizarContador();
-    const intervalo = setInterval(actualizarContador, 1000);
-  </script>
-</body>
-</html>
+   
