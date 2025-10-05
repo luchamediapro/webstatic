@@ -4,15 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transmisión</title>
-    
-    <meta property="og:title" content="¡Estás a punto de ingresar al universo NXT!">
-    <meta property="og:description" content="No te pierdas toda la acción. Serás redirigido automáticamente en 10 segundos.">
-    <meta property="og:url" content="URL_DE_DESTINO"> 
-    <meta property="og:site_name" content="WWE NXT 2025">
-    <meta property="og:image" content="URL_DE_UNA_IMAGEN_DEL_LOGO_HOSTEADA"> 
-    <meta property="og:type" content="website">
-
-<style>
+  <style>
     @keyframes fuego {
       0% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
       50% { box-shadow: 0px 0px 30px rgba(255, 0, 0, 1), 0px 0px 40px rgba(255, 140, 0, 0.9); }
@@ -36,7 +28,7 @@
     .video-container {
       aspect-ratio: 16 / 9;
       width: 100%;
-      max-width: 900px;
+      max-width: 1600px;
       background: black;
       border-radius: 10px;
       animation: fuego 1.5s infinite alternate;
@@ -157,36 +149,21 @@
 </head>
 <body>
   <div class="video-wrapper">
-    <div class="video-container">
-      <div class="indicacion" id="mensajeCarga">Repeticion RAW 29 de Septiembre 2025.....Selecciona la parte a visualizar usando el menu que esta en la parte superior izquierda</div>
+    <div class="video-container" id="videoContainer">
+      <div class="indicacion" id="mensajeCarga">Repeticion NXT No Mercy 2025.....Selecciona la parte a visualizar usando el menu que esta en la parte superior izquierda</div>
       <div class="menu-burbuja" aria-hidden="false">
         <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
         <div class="opciones" id="menuOpciones" aria-hidden="true">
-          <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
-          <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
-                    </div>
+          <button class="boton" onclick="ejecutarAcciones('/?id=nxtnomercy-p1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
+          <button class="boton" onclick="ejecutarAcciones('/?id=nxtnomercy-p2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
+          <button class="boton" onclick="activarPantallaCompleta('videoContainer')">PANTALLA COMPLETA 📺</button>
+        </div>
       </div>
       <iframe id="videoFrame" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
     </div>
-    </div>
-    <div>
-    <div class="boton-regreso-wrapper">
-      
-        <button class="boton-regreso-principal" onclick="goBack()">«REGRESAR A LUCHAMEDIA.ES</button>
-    </div>
   </div>
 
   <script>
-        /* ========================================================== */
-        /* CÓDIGO JS VERIFICADO */
-        /* ========================================================== */
-
-    // Función JavaScript para regresar
-    function goBack() {
-        // history.back() simula el botón de Atrás del navegador
-        history.back();
-    }
-    
     function ejecutarAcciones(iframeUrl, ventanaUrl) {
       document.getElementById("videoFrame").src = iframeUrl;
       const mensaje = document.getElementById("mensajeCarga");
@@ -195,8 +172,6 @@
         mensaje.style.display = "none";
       }, 300);
       window.open(ventanaUrl, "_blank", "width=800,height=600,noopener,noreferrer");
-      // Cierra el menú después de la selección
-      toggleMenu(); 
     }
 
     function toggleMenu() {
@@ -213,6 +188,27 @@
         principal.setAttribute("aria-expanded", "true");
       }
     }
+
+    // FUNCIÓN DE PANTALLA COMPLETA
+    function activarPantallaCompleta(elementId) {
+      const element = document.getElementById(elementId);
+      
+      if (!element) return; // Salir si el elemento no se encuentra
+
+      // Cierra el menú automáticamente
+      document.getElementById("menuOpciones").classList.remove("show");
+      
+      // Aplicar la solicitud de pantalla completa con prefijos de navegador
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) { /* Firefox */
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) { /* Chrome, Safari y Opera */
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) { /* Edge */
+        element.msRequestFullscreen();
+      }
+    }
   </script>
 </body>
 </html>
