@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmisión</title>
+    
+    <meta property="og:title" content="¡Estás a punto de ingresar al universo NXT!">
+    <meta property="og:description" content="No te pierdas toda la acción. Serás redirigido automáticamente en 10 segundos.">
+    <meta property="og:url" content="URL_DE_DESTINO"> 
+    <meta property="og:site_name" content="WWE NXT 2025">
+    <meta property="og:image" content="URL_DE_UNA_IMAGEN_DEL_LOGO_HOSTEADA"> 
+    <meta property="og:type" content="website">
+
+<style>
+    @keyframes fuego {
+      0% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
+      50% { box-shadow: 0px 0px 30px rgba(255, 0, 0, 1), 0px 0px 40px rgba(255, 140, 0, 0.9); }
+      100% { box-shadow: 0px 0px 20px rgba(255, 85, 0, 0.8); }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .video-container {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 900px;
+      background: black;
+      border-radius: 10px;
+      animation: fuego 1.5s infinite alternate;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .indicacion {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      z-index: 55;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .menu-burbuja {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      user-select: none;
+    }
+
+    .menu-burbuja .principal {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform .15s ease, background-color .15s ease;
+    }
+
+    .menu-burbuja .principal:hover {
+      transform: scale(1.06);
+      background-color: darkred;
+    }
+
+    .menu-burbuja .opciones {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      margin-left: 0;
+      transform-origin: left top;
+    }
+
+    .menu-burbuja .opciones .boton {
+      padding: 8px 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .menu-burbuja .opciones .boton:hover {
+      background-color: darkred;
+    }
+
+    .menu-burbuja .opciones.show {
+      display: flex;
+      animation: desplegar 0.15s ease;
+    }
+
+    @keyframes desplegar {
+      from { transform: translateY(-4px); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .menu-burbuja {
+        top: 8px;
+        left: 8px;
+      }
+
+      .menu-burbuja .principal {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
+
+      .menu-burbuja .opciones .boton {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .indicacion {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-wrapper">
+    <div class="video-container">
+      <div class="indicacion" id="mensajeCarga">Repeticion RAW 29 de Septiembre 2025.....Selecciona la parte a visualizar usando el menu que esta en la parte superior izquierda</div>
+      <div class="menu-burbuja" aria-hidden="false">
+        <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+        <div class="opciones" id="menuOpciones" aria-hidden="true">
+          <button class="boton" onclick="ejecutarAcciones('/?id=raw1', 'https://poawooptugroo.com/4/8845437')">PARTE 1</button>
+          <button class="boton" onclick="ejecutarAcciones('/?id=raw2', 'https://poawooptugroo.com/4/8845437')">PARTE 2</button>
+                    </div>
+      </div>
+      <iframe id="videoFrame" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+    </div>
+    </div>
+    <div>
+    <div class="boton-regreso-wrapper">
+      
+        <button class="boton-regreso-principal" onclick="goBack()">« VOLVER A LA PÁGINA ANTERIOR</button>
+    </div>
+  </div>
+
+  <script>
+        /* ========================================================== */
+        /* CÓDIGO JS VERIFICADO */
+        /* ========================================================== */
+
+    // Función JavaScript para regresar
+    function goBack() {
+        // history.back() simula el botón de Atrás del navegador
+        history.back();
+    }
+    
+    function ejecutarAcciones(iframeUrl, ventanaUrl) {
+      document.getElementById("videoFrame").src = iframeUrl;
+      const mensaje = document.getElementById("mensajeCarga");
+      mensaje.style.opacity = "0";
+      setTimeout(() => {
+        mensaje.style.display = "none";
+      }, 300);
+      window.open(ventanaUrl, "_blank", "width=800,height=600,noopener,noreferrer");
+      // Cierra el menú después de la selección
+      toggleMenu(); 
+    }
+
+    function toggleMenu() {
+      const opciones = document.getElementById("menuOpciones");
+      const principal = document.getElementById("btnPrincipal");
+      const isShown = opciones.classList.contains("show");
+      if (isShown) {
+        opciones.classList.remove("show");
+        opciones.setAttribute("aria-hidden", "true");
+        principal.setAttribute("aria-expanded", "false");
+      } else {
+        opciones.classList.add("show");
+        opciones.setAttribute("aria-hidden", "false");
+        principal.setAttribute("aria-expanded", "true");
+      }
+    }
+  </script>
+</body>
+</html>
