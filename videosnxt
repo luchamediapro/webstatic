@@ -154,7 +154,7 @@
       <div class="menu-burbuja" aria-hidden="false">
         <button class="principal" id="btnPrincipal" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
         <div class="opciones" id="menuOpciones" aria-hidden="true">
-          <button class="boton" onclick="ejecutarAcciones('/?id=nxt1', 'https://poawooptugroo.com/4/8845437')">VER EL SHOW COMPLETO</button>
+          <button class="boton" onclick="ejecutarAcciones('/?id=nqt1', 'https://poawooptugroo.com/4/8845437')">VER EL SHOW COMPLETO</button>
           
         </div>
       </div>
