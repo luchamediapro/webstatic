@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video con Marca de Agua</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        #player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            border: 0;
+            overflow: hidden;
+        }
+
+        #custom-logo {
+            width: 800px;
+        }
+
+        #watermark {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+    </style>
+
+    <meta name="referrer" content="no-referrer">
+    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+    <script>
+        jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+    </script>
+</head>
+
+<body>
+    <div id="player"></div>
+
+    <!-- Marca de agua -->
+    <div id="watermark">LUCHAMEDIA.ES</div>
+
+    <script>
+        var playerInstance = jwplayer("player");
+        playerInstance.setup({
+            playlist: [{
+                "sources": [{
+                    "default": false,
+                    "type": "hls",
+                    "file": "https://live21.bozztv.com/akamaissh101/ssh101/rojo81125/chunks.m3u8",
+                }],
+                "label": "0"
+            }],
+            width: "100%",
+            height: "100%",
+            aspectratio: "16:9",
+            autostart: true,
+            cast: {},
+            sharing: false,
+            logo: {
+                
+                link: "https://luchamedia.es",
+                hide: false,
+                position: "top-right",
+            }
+        });
+
+        playerInstance.on('setupError', function(event) {
+            console.error('JWPlayer Setup Error:', event);
+        });
+
+        playerInstance.on('error', function(event) {
+            console.error('JWPlayer Error:', event);
+        });
+    </script>
+
+    <!-- C贸digo antidebug -->
+    <script type="text/javascript" data-cfasync="false">
+        (function() {
+            var w = window, n = "ece0272ae9552ad987c6655d4b4dfcfa", f = [["siteId",428+15*450+66*696+4341909],["minBid",10],["popundersPerIP","10:1,10:1"],["delayBetween",10],["default",false],["defaultPerDay",10],["topmostLayer",!0]], a = ["d3d3LmNkbjRhZHMuY29tL2Nzcy9xYW5ndWxhcmpzLW52ZDMtZGlyZWN0aXZlcy5taW4uanM=","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvYXBpL2pzL292YXN0LWNsaWVudC5taW4uY3Nz"], e = -1, z, p, j = function() {
+                clearTimeout(p);e++;
+                if (a[e] && !(1731129255000 < (new Date).getTime() && 1 < e)) {
+                    z = w.document.createElement("script");
+                    z.type = "text/javascript";
+                    z.async = !0;
+                    var x = w.document.getElementsByTagName("script")[0];
+                    z.src = "https://" + atob(a[e]);
+                    z.crossOrigin = "anonymous";
+                    z.onerror = j;
+                    z.onload = function() {
+                        clearTimeout(p);
+                        w[n.slice(0,16)+n.slice(0,16)] || j()
+                    };
+                    p = setTimeout(j, 5000);
+                    x.parentNode.insertBefore(z, x)
+                }
+            };
+            if (!w[n]) {
+                try {
+                    Object.freeze(w[n] = f)
+                } catch (e) {}
+                j()
+            }
+        })();
+    </script>
+
+    <!-- C贸digo para bloquear F12 y Ctrl+U -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).keydown(function (e) {
+                var tecla = e.keyCode || e.which;
+
+                if (tecla == 123 || (e.ctrlKey && tecla == 85)) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
 
