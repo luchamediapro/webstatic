@@ -1,53 +1,44 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors',1);
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MediaFire Redirect</title>
+</head>
 
-if(!isset($_GET['id'])){
-    die("Falta parámetro ?id=");
-}
+<body>
 
-$id = trim($_GET['id']);
+<script>
 
-/*
-  Permite dos formas:
+// obtener parámetros de la URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 
-  1) URL completa:
-     mediafire.php?id=https://www.mediafire.com/file/xxxxx/archivo.mp4/file
+if(!id){
 
-  2) Solo el ID:
-     mediafire.php?id=xxxxx
-*/
+document.body.innerHTML="Falta el parámetro id";
 
-if(filter_var($id, FILTER_VALIDATE_URL)){
-    // Si es URL completa
-    $filelink = urldecode($id);
 }else{
-    // Si solo es el ID
-    $filelink = "https://www.mediafire.com/file/".$id;
-}
 
+let link="";
 
-// obtener HTML
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $filelink);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
+// si es URL completa
+if(id.includes("mediafire.com")){
 
-$html = curl_exec($ch);
-curl_close($ch);
+link=id;
 
-
-// extraer enlace directo
-preg_match('/https?:\/\/download[^"]+/i', $html, $matches);
-
-$link = $matches[0] ?? "";
-
-
-if($link){
-    header("Location: ".$link);
-    exit;
 }else{
-    echo "No se pudo obtener el enlace directo.";
+
+// si solo es el ID
+link="https://www.mediafire.com/file/"+id;
+
 }
-?>
+
+// redirigir
+window.location.href=link;
+
+}
+
+</script>
+
+</body>
+</html>
